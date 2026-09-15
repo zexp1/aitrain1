@@ -216,3 +216,18 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+corpus/
+.venv/
+*.npy
+*.db
+corpus-full/
+zemma.db
+*.litertlm
+*.tflite
+
+# T-13 (2026-09-15): adapters/*/checkpoint-*/ (LoRA training checkpoints, ~190MB each incl.
+# optimizer.pt) and adapters/cbse-format/adapter_model.safetensors (52.2MB) are large model
+# artifacts (>50MB) — NOT committed to git. Inventoried in LARGE-ARTIFACTS.tsv and
+# durability-copied to /mnt/hdd/pk31-large-artifacts/aitrain1/ on pk31.
+adapters/*/checkpoint-*/
+adapters/cbse-format/adapter_model.safetensors
