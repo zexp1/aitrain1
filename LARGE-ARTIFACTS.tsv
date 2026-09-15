@@ -1,0 +1,11 @@
+# LARGE-ARTIFACTS.tsv — inventory of large model artifacts EXCLUDED from git (T-13, 2026-09-15)
+# path	bytes	sha256_first64MB	sha256_last64MB	produced_by
+# Files <=64MB: both columns are the full-file sha256 (tail column reads SAME-AS-HEAD).
+# Directories: hashed as a DIR-MANIFEST (sha256 of sorted "relpath size mtime" listing) since a
+# byte-range hash is undefined for a multi-file directory; both columns carry the same hash.
+# Durability leg: rsync'd to /mnt/hdd/pk31-large-artifacts/aitrain1/<path> on pk31 (same host,
+# separate volume — protects against accidental rm of the working tree, not disk failure).
+adapters/cbse-format/adapter_model.safetensors	52231312	cd9323c44270c0aef0f074baf15f6313709adad3a98677a927009ba195126950	SAME-AS-HEAD	src/train_qlora.py (final adapter)
+adapters/cbse-format/checkpoint-29	190324736	DIR-MANIFEST:0bdd339c2e2950c866232b034c9d255223e0d88c2633de25226283ec9cb38adc	DIR-MANIFEST:0bdd339c2e2950c866232b034c9d255223e0d88c2633de25226283ec9cb38adc	src/train_qlora.py (intermediate checkpoint)
+adapters/cbse-format/checkpoint-58	190325481	DIR-MANIFEST:225f2a594b007d496d8b06b2dafad7d0edc4c74d77add3ddbb51205b798fefa4	DIR-MANIFEST:225f2a594b007d496d8b06b2dafad7d0edc4c74d77add3ddbb51205b798fefa4	src/train_qlora.py (intermediate checkpoint)
+adapters/cbse-format/checkpoint-87	190326230	DIR-MANIFEST:518eeae1574b0bf074d0f6f3f57a36ab8733d1b9550cabb9e0fc3feafbafd5d1	DIR-MANIFEST:518eeae1574b0bf074d0f6f3f57a36ab8733d1b9550cabb9e0fc3feafbafd5d1	src/train_qlora.py (intermediate checkpoint)
